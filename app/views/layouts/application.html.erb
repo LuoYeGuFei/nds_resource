@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= yield :stylesheets %>
   </head>
 
@@ -15,6 +15,9 @@
       <% unless flash[:notice].blank? %>
         <div class="alert alert-info"><%= flash[:notice] %></div>
       <% end %>
+      <br/>
+      <br/>
+      <br/>
       <br/>
       <br/>
       <%= yield %>

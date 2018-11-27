@@ -1,0 +1,5 @@
+"zh":
+  users:
+    name: "姓名"
+  rucaptcha:
+    invalid: "验证码错误"

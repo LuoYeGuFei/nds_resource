@@ -20,5 +20,8 @@ module NdsResource
       generator.assets false
       generator.test_framework false
     end
+
+    config.time_zone = "Beijing"
+    config.i18n.default_locale = :zh
   end
 end
