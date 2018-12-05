@@ -39,16 +39,21 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">链接</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理员<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">设置</a></li>
-                <li><a href="#">个人资料</a></li>
-                <li><a href="#">账户中心</a></li>
-                <li class="divider"></li>
-                <li><a href="#">退出登录</a></li>
-              </ul>
-            </li>
+            <% if current_user %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">设置</a></li>
+                  <li><a href="#">个人资料</a></li>
+                  <li><a href="#">账户中心</a></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><a href="<%=new_user_registration_path %>">注册</a></li>
+              <li><a href="<%=new_user_session_path %>">登录</a></li>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>

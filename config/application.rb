@@ -20,5 +20,7 @@ module NdsResource
       generator.assets false
       generator.test_framework false
     end
+
+    config.i18n.default_locale = :zh
   end
 end
