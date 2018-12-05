@@ -1,0 +1,2 @@
+class CommonStatus < ApplicationRecord
+end
