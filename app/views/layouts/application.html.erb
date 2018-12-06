@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "NDS资源管理系统" %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= yield :stylesheets %>
+  </head>
+
+  <body>
+    <%= render 'layouts/menu' %>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <%= yield %>
+      <br/>
+      <br/>
+      <div class="container">
+        <%= render "layouts/footer" %>
+        <%= debug(params) if Rails.env.development? %>
+      </div>
+    </div>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :javascripts %>
+  </body>
+</html>

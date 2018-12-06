@@ -1,0 +1,36 @@
+<% title_tag t("common.login") %>
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header"><%= t("common.login") %></div>
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <%= f.text_field :login, class: "form-control input-lg", placeholder: "用户名 / Email" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :password, type: :password, class: "form-control input-lg", placeholder: "密码" %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="form-group form-check">
+              <label class="form-check-label" for="user_remember_me">
+              <%= f.check_box :remember_me %>
+              <%= t("common.remember_me") %>
+            </div>
+          <% end -%>
+
+          <div class="form-actions">
+            <%= f.submit t("common.login"), class: "btn btn-primary btn-lg btn-block" %>
+          </div>
+        <% end %>
+
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
